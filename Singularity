@@ -7,7 +7,10 @@ From: ubuntu:latest
     exec echo "Hello Monsoir Meatball" "$@"
 
 %post
- 
+
    echo "Here we are installing software and other dependencies for the container!"
    apt-get update
-   apt-get install -y git
+   apt-get install python-pip -y
+   apt-get install python-numpy -y
+   pip install dask distributed --upgrade
+
