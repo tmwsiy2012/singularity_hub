@@ -12,5 +12,6 @@ From: ubuntu:latest
    apt-get update
    apt-get install python-pip -y
    apt-get install python-numpy -y
+   pip install --upgrade pip
    pip install dask distributed --upgrade
 
