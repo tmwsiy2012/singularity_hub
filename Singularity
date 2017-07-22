@@ -10,8 +10,7 @@ From: ubuntu:latest
 
    echo "Here we are installing software and other dependencies for the container!"
    apt-get update
-   apt-get install python-pip -y
-   apt-get install python-numpy -y
+   apt-get install python3 python3-pip python3-numpy -y
    pip install --upgrade pip
    pip install dask distributed --upgrade
 
