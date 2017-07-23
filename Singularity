@@ -8,13 +8,15 @@ From: ubuntu:latest
 
 %post
 
-   echo "Here we are installing software and other dependencies for the container!"
+   echo "Install Anaconda3 with numpy and dask distributed to /opt/miniconda3"
    apt-get update
    apt-get install wget bzip2 -y
-   wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
-   bash ~/miniconda.sh -b -p /opt/miniconda
-   export PATH="/opt/miniconda/bin:$PATH"   
+   wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh -O ~/miniconda3.sh
+   bash ~/miniconda3.sh -b -p /opt/miniconda3
+   echo 'export PATH="/opt/miniconda3/bin:$PATH"' >> /root/.bashrc
+   export PATH="/opt/miniconda3/bin:$PATH"   
    conda install numpy dask distributed 
+   rm -rf ~/miniconda3.sh
    
    
 
